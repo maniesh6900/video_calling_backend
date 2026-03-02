@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({origin: "*"}));
 
-import UserRoute from "./routes/user-route";
-app.use("/api/v1/user", UserRoute);
+// import UserRoute from "./routes/user-route";
+// app.use("/api/v1/user", UserRoute);
 
 export {app};
