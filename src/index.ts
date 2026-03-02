@@ -3,7 +3,7 @@ dotenv.config({
     path : "./.env",
 });
 import { app } from "./app";
-import http from "http";
+import http from "https";
 
 app.listen(3000);
 
