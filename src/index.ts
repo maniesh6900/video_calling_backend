@@ -3,12 +3,15 @@ dotenv.config({
     path : "./.env",
 });
 import { app } from "./app";
+import http from "http";
 
 app.listen(3000);
 
+const server = http.createServer(app);
+
 import { WebSocketServer } from 'ws';
 import { User } from "./ws/User";
-const wss = new WebSocketServer({ port: 3001 });
+const wss = new WebSocketServer({server});
 
 wss.on('connection', (ws) => {
     const user = new User(ws);
