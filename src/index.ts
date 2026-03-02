@@ -4,7 +4,6 @@ dotenv.config({
 });
 import { app } from "./app";
 import http from "http";
-
 const server = http.createServer(app);
 
 import { WebSocketServer } from 'ws';
@@ -21,4 +20,6 @@ wss.on('connection', (ws) => {
     });
 });
 
-server.listen(3000);
+app.get('/', (req : any, res : any) => res.json({msg :'Hello'}));
+
+server.listen(3000, () => console.log('Running on 3000'));

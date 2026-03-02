@@ -6,7 +6,7 @@ import cors from "cors";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({origin:[ "https://video-call-front-five.vercel.app", "http://localhost"]}));
+app.use(cors({origin:[ "https://video-call-front-five.vercel.app", "http://localhost:5173"]}));
 
 import UserRoute from "./routes/tokenRoute";
 app.use("/api/v1/user", UserRoute);
