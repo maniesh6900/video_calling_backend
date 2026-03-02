@@ -3,9 +3,7 @@ dotenv.config({
     path : "./.env",
 });
 import { app } from "./app";
-import http from "https";
-
-app.listen(3000);
+import http from "http";
 
 const server = http.createServer(app);
 
@@ -22,3 +20,5 @@ wss.on('connection', (ws) => {
         user?.destroy();
     });
 });
+
+server.listen(3000);
